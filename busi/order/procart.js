@@ -1,4 +1,4 @@
-//获取页面传来的参数
+		//获取页面传来的参数
 		var cusId = jQuery.url.param("userId");
 		
 		var self = this;
@@ -10,7 +10,6 @@
 		initPullEvent();
 		init();
 		
-		
 		function alalyseTotal(){
 			var checkboxs = document.body.querySelectorAll('input[type=checkbox]');
 			for(var i=0; i<checkboxs.length; i++){
@@ -19,8 +18,8 @@
 					var totalPrice = 0;
 					for(var j=0; j<checkboxs.length; j++){
 						if(checkboxs[j].checked){
-						var input = checkboxs[j].parentNode.parentNode.querySelector('input[type=number]');
-						totalPrice = parseFloat(totalPrice) + parseFloat(input.getAttribute('pri')) * input.value;
+							var input = checkboxs[j].parentNode.parentNode.querySelector('input[type=number]');
+							totalPrice = parseFloat(totalPrice) + parseFloat(input.getAttribute('pri')) * input.value;
 						}
 					}
 					
