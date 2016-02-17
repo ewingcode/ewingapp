@@ -77,7 +77,6 @@ function load(status) {
 						return false;
 					}
 					
-					console.log(json.result);
 					self.load(status);
 				});
 			});
@@ -97,7 +96,6 @@ function load(status) {
 						return false;
 					}
 					
-					console.log(json.result);
 					self.load(status);
 				});
 			});

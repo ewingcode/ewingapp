@@ -32,7 +32,7 @@
 						}
 					};
 			
-					ajax.jsonpSyncRequest("address/index.action", requestJson, function(json) { 
+					ajax.jsonpSyncRequest("address/addrIndex.action", requestJson, function(json) { 
 						if (json.length == 0) {
 							pListIsEnd = true; 
 							return false;

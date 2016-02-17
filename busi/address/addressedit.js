@@ -77,7 +77,7 @@
 							address : $("#address").val()
 						}
 					};
-					ajax.jsonpSyncRequest("address/save.action", requestJson, function(json) {
+					ajax.jsonpSyncRequest("address/saveAddr.action", requestJson, function(json) {
 						if(null == json || '' == json){
 							return false;
 						}
@@ -96,7 +96,7 @@
 					id: jQuery.url.param("addId")
 				}
 			};
-			ajax.jsonpSyncRequest("address/find.action", requestJson, function(json) {
+			ajax.jsonpSyncRequest("address/findAddr.action", requestJson, function(json) {
 				if(null == json || '' == json){
 					return false;
 				}

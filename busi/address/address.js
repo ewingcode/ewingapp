@@ -79,20 +79,6 @@
 			 * 页面拉新的具体操作
 			 */
 		function init(){
-			var requestJson = {
-				data: {
-					id: jQuery.url.param("addId")
-				}
-			};
-			ajax.jsonpSyncRequest("address/find.action", requestJson, function(json) {
-				if(null == json || '' == json){
-					return false;
-				}
-				
-				$("#addressForm").loadTemplate($("#addressMsg"), json.result);
-			});
-			
-			
 			 //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
 			mui.plusReady(function(){
 			    //关闭等待框
