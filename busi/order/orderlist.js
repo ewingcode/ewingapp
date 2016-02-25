@@ -30,7 +30,6 @@ function init(){
 function load(status) {
 	var requestJson = {
 		data: {
-			cusId: cusId,
 			status : status,
 			page: page,
 			pageSize: pageSize
@@ -41,8 +40,6 @@ function load(status) {
 			return false;
 		}
 
-		console.log(json.result);
-		
 		$("#showOrderList").html('');
 		for (var i = 0; i < json.result.list.length; i++) {
 			document.getElementById('orderLiDiv').querySelector('.mui-table-view').innerHTML = '';
@@ -61,6 +58,15 @@ function load(status) {
 			$("#showOrderList").append($("#orderLiDiv").html());
 		}
 		
+		var resImgs = document.body.querySelectorAll('.resImg');
+		for(var i=0; i<resImgs.length; i++){
+			resImgs[i].addEventListener('tap', function(){
+				mui.openWindow({
+					id: 'prodetail',
+					url: '../prodetail.html?pId=' + this.getAttribute("resId") 
+				});
+			});
+		}
 		
 		//注册事件
 		var cancalBtns = document.body.querySelectorAll('.closeOrder');

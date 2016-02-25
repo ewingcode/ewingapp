@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
-	
+
 	<script type="text/html" id="addressLiDefault">
-		<li data-template-bind='[{"attribute": "addId", "value": "id"},{"attribute": "isDef", "value": "isDefault"}]' class="mui-table-view-cell mui-media defaultAdress" style="background-color: gray;color: white;">
-			<a class="mui-navigate-right">
-			<p class="defaultAdressFront">[默认]</p>
-			<p class="defaultAdressFront"> <span data-content="receiver"></span> <span data-content="phone" style="padding-left: 10px;"></span> <span data-content="postCode" style="padding-left: 10px;"></span></p>
-			<p class="defaultAdressFront"> <span data-content="province"></span> <span data-content="city"></span> <span data-content="region"></span> <span data-content="address"></span></p>
-			</a>
+		<li class="mui-table-view-cell mui-media address defaultAdress" style="background-color: gray;color: white;">
+			<div class="mui-slider-right mui-disabled"  >
+				<a class="mui-btn mui-btn-red delAddr" data-template-bind='[{"attribute": "addId", "value": "id"}]'>删除</a>
+			</div>
+			<div class="mui-slider-handle" data-template-bind='[{"attribute": "addId", "value": "id"},{"attribute": "isDef", "value": "isDefault"}]' style="background-color: gray;color: white;">
+				<a class="mui-navigate-right">
+					<p class="defaultAdressFront">[默认]</p>
+					<p class="defaultAdressFront"> <span data-content="receiver"></span> <span data-content="phone" style="padding-left: 10px;"></span> <span data-content="postCode" style="padding-left: 10px;"></span></p>
+					<p class="defaultAdressFront"> <span data-content="province"></span> <span data-content="city"></span> <span data-content="region"></span> <span data-content="address"></span></p>
+				</a>
+			</div>
 		</li>
 	</script>
-	
+
 	<script type="text/html" id="addressLi">
-		<li data-template-bind='[{"attribute": "addId", "value": "id"},{"attribute": "isDef", "value": "isDefault"}]' class="mui-table-view-cell mui-media address addressLi">
-		<a class="mui-navigate-right">
-			<p> <span data-content="receiver"></span> <span data-content="phone" style="padding-left: 10px;"></span> <span data-content="postCode" style="padding-left: 10px;"></p>
-			<p> <span data-content="province"></span> <span data-content="city"></span> <span data-content="region"></span> <span data-content="address"></span></p>
-		</a>
+		<li class="mui-table-view-cell mui-media address addressLi">
+			<div class="mui-slider-right mui-disabled">
+				<a class="mui-btn mui-btn-red delAddr" data-template-bind='[{"attribute": "addId", "value": "id"}]' >删除</a>
+			</div>
+			<div class="mui-slider-handle" data-template-bind='[{"attribute": "addId", "value": "id"},{"attribute": "isDef", "value": "isDefault"}]'>
+				<a class="mui-navigate-right">
+					<p> <span data-content="receiver"></span> <span data-content="phone" style="padding-left: 10px;"></span> <span data-content="postCode" style="padding-left: 10px;"></p>
+				<p> <span data-content="province"></span> <span data-content="city"></span> <span data-content="region"></span> <span data-content="address"></span></p>
+				</a>
+			</div>
 		</li>
 	</script>
-	
-<head>
+
+	<head>
 		<meta charset="utf-8">
 		<title>海鲜街</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -79,8 +89,7 @@
 				</div>
 			</a>
 		</nav>
-		
-		
+
 		<!--下拉刷新容器-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
@@ -90,7 +99,7 @@
 			</div>
 		</div>
 	</body>
-	
+
 	<div style="display: none;" id="liTmp"></div>
 	<script src="../../js/mui.min.js"></script>
 	<script src="../../js/jquery-1.10.1.min.js"></script>
@@ -98,5 +107,5 @@
 	<script src="../../busi/js/ajax.js"></script>
 	<script src="../../js/jquery.url.js"></script>
 	<script src="../../busi/address/addresslist.js"></script>
-	
+
 </html>

@@ -19,7 +19,7 @@
 					for(var j=0; j<checkboxs.length; j++){
 						if(checkboxs[j].checked){
 							var input = checkboxs[j].parentNode.parentNode.querySelector('input[type=number]');
-							totalPrice = parseFloat(totalPrice) + parseFloat(input.getAttribute('pri')) * input.value;
+							totalPrice = (parseFloat(totalPrice) + parseFloat(input.getAttribute('pri')) * input.value).toFixed(2);
 						}
 					}
 					
@@ -127,7 +127,9 @@
 								var input = this.parentNode.querySelector('input');
 								input.value = parseInt(input.value) + 1;
 								
-								$("#totalPrice").html(parseFloat($("#totalPrice").html()) + parseFloat(input.getAttribute('pri')));
+								if(this.parentNode.parentNode.querySelector('input[type=checkbox]').checked == true){
+									$("#totalPrice").html((parseFloat($("#totalPrice").html()) + parseFloat(input.getAttribute('pri'))).toFixed(2));
+								}
 							});
 						}
 						
@@ -139,12 +141,14 @@
 									return;
 								}
 								input.value = parseInt(input.value) - 1;
-								$("#totalPrice").html(parseFloat($("#totalPrice").html()) - parseFloat(input.getAttribute('pri')));
+								
+								if(this.parentNode.parentNode.querySelector('input[type=checkbox]').checked == true){
+									$("#totalPrice").html((parseFloat($("#totalPrice").html()) - parseFloat(input.getAttribute('pri'))).toFixed(2));
+								}
 							});
 						}
 						
 						self.alalyseTotal();
-						
 					}, 100);
 				})
 			}

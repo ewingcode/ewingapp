@@ -3,6 +3,7 @@
 		//是否没有数据
 		var pListIsEnd = false;
 		var curPage = 1;
+		var self = this;
 		
 		
 		mui.init({
@@ -56,7 +57,7 @@
 					//添加listener
 					var addresses = document.querySelectorAll(".address");
 					for (var i = 0; i < addresses.length; i++) {
-						addresses[i].addEventListener('tap', function() {
+						addresses[i].querySelector('.mui-slider-handle').addEventListener('tap', function() {
 							mui.openWindow({
 								id: 'addressedit',
 								url: 'addressedit.html?addId=' + this.getAttribute('addId'),
@@ -67,7 +68,7 @@
 					
 					var addresses = document.querySelectorAll(".defaultAdress");
 					for (var i = 0; i < addresses.length; i++) {
-						addresses[i].addEventListener('tap', function() {
+						addresses[i].querySelector('.mui-slider-handle').addEventListener('tap', function() {
 							mui.openWindow({
 								id: 'addressedit',
 								url: 'addressedit.html?addId=' + this.getAttribute('addId'),
@@ -82,6 +83,28 @@
 							url: 'address.html'
 						});
 					});
+					
+					var addresses = document.body.querySelectorAll('.address');
+					for(var i=0; i<addresses.length; i++){
+						var id = addresses[i].getAttribute('addId');
+						addresses[i].querySelector('.delAddr').addEventListener('tap', function(){
+							var requestJson = {
+								data: {
+									id: this.getAttribute('addId')
+								}
+							};
+	
+							ajax.jsonpSyncRequest("address/delAddress.action", requestJson, function(json) { 
+								if (json.length == 0) {
+									pListIsEnd = true; 
+									return false;
+								}
+								
+								self.pullupRefresh();
+							});
+						});
+					}
+					
 				});
 			}
 			

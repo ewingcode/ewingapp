@@ -24,7 +24,7 @@
 		<script type="text/html" id="orderLi">
 			<li class="mui-table-view-cell mui-media">
 				<div class="mui-left">
-					<img class="mui-pull-left" style="height: 80px;width: 80px;padding-right: 10px;" data-src="icon">
+					<img class="mui-pull-left resImg" style="height: 80px;width: 80px;padding-right: 10px;" data-src="icon" data-template-bind='[{"attribute": "resId", "value": "resourceId"}]'>
 					<p class="detailfront" data-content="productName"></p>
 					<p class='mui-ellipsis' style="padding-top: 10px;" >规格：普通包装</p>
 				</div>
@@ -94,7 +94,7 @@
 		<div class="mui-content">
 			<div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative" style="background-color: white;padding-bottom: 5px;padding-top: 5px;">
-					<a class="mui-control-item mui-active" href="#item1mobile" width="10px" >
+					<a class="mui-control-item mui-active" href="#item1mobile" width="10px" status=''>
 					全部
 					</a>
 					<a class="mui-control-item" href="#item2mobile" width="10px" status='0'>
@@ -109,39 +109,6 @@
 				</div>
 				<div id="showOrderList">
 					
-
-					<!--<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<span class="mui-icon iconfont icon-dianpu" style="margin-right: 10px;"></span>海鲜街 <span style="margin-left: 10px;">&#62;</span>
-							<span style="float: right;color: red;">待发货</span>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<div class="mui-left">
-								<img class="mui-pull-left" style="height: 80px;width: 80px;padding-right: 10px;" src="../../images/haixian2.jpg">
-								<p class="detailfront">挪威鱼生</p>
-								<p class='mui-ellipsis' style="padding-top: 10px;">规格：普通包装</p>
-
-							</div>
-							<div style="float: right;margin-top: -50px;text-align: right;vertical-align: top;">
-								<p>￥50.00</p>
-								<p>x1</p>
-							</div>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<div class="mui-left">
-								<img class="mui-pull-left" style="height: 80px;width: 80px;padding-right: 10px;" src="../../images/haixian1.jpg">
-								<p class="detailfront">大生蚝</p>
-								<p class='mui-ellipsis' style="padding-top: 10px;">规格：普通包装</p>
-							</div>
-							<div style="float: right;margin-top: -50px;text-align: right;vertical-align: top;">
-								<p>￥50.00</p>
-								<p>x1</p>
-							</div>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<span>共1件商品</span> <span style="float: right;">总价:￥50.00</span>
-						</li>
-					</ul>-->
 				</div>
 			</div>
 

@@ -26,19 +26,19 @@
 			}
 			
 			//省份
-			if(null == $("#province").val() || '' == $("#province").val()){
+			if(null == document.body.querySelector(".prov").value || '' == document.body.querySelector(".prov").value){
 				ewing.alert("提示", "省份不能为空哦", null);
 				return;
 			}
 			
 			//城市
-			if(null == $("#city").val() || '' == $("#city").val()){
+			if(null == document.body.querySelector(".city").value || '' == document.body.querySelector(".city").value){
 				ewing.alert("提示", "城市不能为空哦", null);
 				return;
 			}
 			
 			//地区
-			if(null == $("#region").val() || '' == $("#region").val()){
+			if(document.body.querySelector(".dist").value != '' && (null == document.body.querySelector(".dist").value || '' == document.body.querySelector(".dist").value)){
 				ewing.alert("提示", "地区不能为空哦", null);
 				return;
 			}
@@ -56,13 +56,13 @@
 							receiver : $("#receiver").val(),
 							phone : $("#phone").val(),
 							postCode : $("#postCode").val(),
-							province : $("#province").val(),
-							city : $("#city").val(),
-							region : $("#region").val(),
+							province : document.body.querySelector(".prov").value,
+							city : document.body.querySelector(".city").value,
+							region : document.body.querySelector(".dist").value,
 							address : $("#address").val()
 						}
 					};
-					ajax.jsonpSyncRequest("address/save.action", requestJson, function(json) {
+					ajax.jsonpSyncRequest("address/saveAddr.action", requestJson, function(json) {
 						if(null == json || '' == json){
 							return false;
 						}
@@ -79,6 +79,17 @@
 			 * 页面拉新的具体操作
 			 */
 		function init(){
+			//地址选择框初始化
+			$("#myAddress").citySelect({
+				url: "../../busi/js/citySelector/city.min.js",
+			    prov: $("#provInput").val() || '',
+			    city: $("#cityInput").val() || '',
+			    dist: $("#regionInput").val() || '',
+			    nodata:"none",
+			    callback: function(){
+			    }
+			});
+		
 			 //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
 			mui.plusReady(function(){
 			    //关闭等待框

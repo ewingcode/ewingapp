@@ -31,9 +31,9 @@
 		</style>
 		
 		<script type="text/html" id="cartLi">
-			<li class="mui-table-view-cell mui-media" data-template-bind='[{"attribute": "resId", "value": "resourceId"}]'>
+			<li class="mui-table-view-cell mui-media">
 				<div class="mui-input-row mui-checkbox mui-left">
-					<label style="margin-left: -15px;"><img class="mui-media-object mui-pull-left" data-src="icon">
+					<label style="margin-left: -15px;"><img class="mui-media-object mui-pull-left" data-src="icon" data-template-bind='[{"attribute": "resId", "value": "resourceId"}]'>
 						<p class="cartItemfront" data-content="productName"></p>
 						<p class='mui-ellipsis' style="padding-top: 10px;" data-content-append="unitPrice">￥</p>
 					</label>
