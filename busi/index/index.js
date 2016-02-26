@@ -12,22 +12,22 @@ function initTapEvent() {
 	document.getElementById("ordercenter").addEventListener('tap', function() {
 		mui.openWindow({
 			id: 'ordercenter',
-			url: '../../module/order/ordercenter.html'
+			url: 'order/orderlist.html'
 		});
 	});
 	
 	document.getElementById("prodcutCart").addEventListener('tap', function() {
 		mui.openWindow({
 			id: 'producatCart',
-			url: 'procart.html'
+			url: 'order/procart.html'
 		});
 	});
-	document.getElementById("ordercenter").addEventListener('tap', function() {
-		mui.openWindow({
-			id: 'ordercenter',
-			url: 'ordercenter.html'
-		});
-	});
+//	document.getElementById("ordercenter").addEventListener('tap', function() {
+//		mui.openWindow({
+//			id: 'ordercenter',
+//			url: 'ordercenter.html'
+//		});
+//	});
 }
 
 function initPullEvent() {

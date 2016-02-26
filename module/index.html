@@ -70,7 +70,6 @@
 				<header class="mui-bar mui-bar-nav">
 					<div>
 						<span style="float:right;margin-right: 10px;line-height: 2.5;color:#555555;font-size: 16px;" id="ordercenter">| 订单中心</span>
-
 						<span style="float:right;margin-right: 5px;color:#555555;" class="mui-icon iconfont icon-gouwuche" id="prodcutCart"><span class="mui-badge" id="productCartNum"></span></span>
 					</div>
 				</header>
@@ -110,20 +109,20 @@
 	<script src="../busi/js/ajax.js"></script>
 	<script src="../js/jquery.url.js"></script>
 	<script src="../busi/index/index.js"></script>
-	
+
 	<div id="productInfoHtmlTmp" style="display: none;"></div>
 	<script type="text/html" id="lightProductTemplate">
 		<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid gainsboro;border-bottom: 1px solid gainsboro;">
 			<div style="margin:5px 5px 5px -2px;">
 				<a href="#">
-					<img class="mui-media-object productimg"   data-src="imageUrl"  data-value="id">
+					<img class="mui-media-object productimg" data-src="imageUrl" data-value="id">
 					<div class="mui-media-body" style="text-align:left;margin:10px 0px 5px 5px;float:left;font-size: 14px;font-weight: 400; "><span data-content="shortDesc"></span>
 					</div>
 				</a> <span style="margin:10px 0px 5px 5px;float:left;color:orange;font-size: 15px;font-weight: 400;"> ￥  <span data-content="price"></span></span>
 				<span style="margin:10px 10px 10px;float:right">
-				<button type = "button"class = "mui-btn mui-btn-warning"
-			style = "width: 50px;height: 28px;font-size: 12px" >
-				订购 </button>  </span> </div>
+				<button type = "button"class = "mui-btn mui-btn-warning" style = "width: 50px;height: 28px;font-size: 12px" >订购 </button>  
+				</span>
+			</div>
 		</li>
 	</script>
 
