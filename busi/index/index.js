@@ -69,10 +69,13 @@ function initPullEvent() {
 				} 
 				pListPage++;
 				$("#productInfoHtmlTmp").html('');
-				$("#productInfoHtmlTmp").loadTemplate($("#lightProductTemplate"), json.result);
+				$("#productInfoHtmlTmp").loadTemplate($("#lightProductTemplate"), json.result.list);
 				$('#produectList').append($("#productInfoHtmlTmp").html()); 
+				$("#categoryUl").html('');
+				$("#categoryUl").loadTemplate($("#categoryLi"), json.result.categoryList);
+				
+				
 				var productimgs = document.querySelectorAll(".productimg");
-			 
 				for (var i = 0; i < productimgs.length; i++) { 
 					var pId = productimgs[i].getAttribute("value");
 					var jumpUrl = 'prodetail.html?pId=' + pId; 
