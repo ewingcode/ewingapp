@@ -22,7 +22,9 @@ function renderProductDetail() {
 		productSpecList = json.result.specList;
 		initTapEvent();
 		
-		$("#collectA").addClass('mui-active');
+		if(json.result.productDetail.isCollect == 1){
+			$("#collectA").addClass('mui-active');
+		}
 	})
 }
 //设置所有点击事件
@@ -50,21 +52,31 @@ function initTapEvent() {
 			url: 'order/procart.html'
 		});
 	});
-	document.getElementById("ordercenter").addEventListener('tap', function() {
+	document.getElementById("orderList").addEventListener('tap', function() {
 		mui.openWindow({
-			id: 'ordercenter',
-			url: 'order/ordercenter.html'
+			id: 'orderlist',
+			url: 'order/orderlist.html'
 		});
 	});
 	document.getElementById("confirmSpec").addEventListener('tap', function() {
 		var action = document.getElementById("confirmSpec").getAttribute("action");
 		if (action == 'addCart') {
-			mui.toast('成功加入购物车!');
 			var curCartNum = document.getElementById("productCartNum").innerHTML;
 			if (!curCartNum)
 				curCartNum = 0;
-			document.getElementById("productCartNum").innerHTML = Number.parseInt(curCartNum) + 1;
-			document.getElementById("specDiv").style.display = 'none';
+				
+			var requestJson = {
+				data: {
+					resourceId: pId,
+					count : $("#productNum").val()
+				}
+			};
+			
+			ajax.jsonpSyncRequest("cart/putCart.action", requestJson, function(json) {
+				mui.toast('成功加入购物车!');
+				document.getElementById("productCartNum").innerHTML = Number.parseInt(curCartNum) + 1;
+				document.getElementById("specDiv").style.display = 'none';
+			});
 		} else if (action == 'addShoppping') {
 			document.getElementById("specDiv").style.display = 'none';
 			mui.openWindow({
