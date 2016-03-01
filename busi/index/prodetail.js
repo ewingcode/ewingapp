@@ -52,10 +52,10 @@ function initTapEvent() {
 			url: 'order/procart.html'
 		});
 	});
-	document.getElementById("ordercenter").addEventListener('tap', function() {
+	document.getElementById("orderList").addEventListener('tap', function() {
 		mui.openWindow({
-			id: 'ordercenter',
-			url: 'order/ordercenter.html'
+			id: 'orderlist',
+			url: 'order/orderlist.html'
 		});
 	});
 	document.getElementById("confirmSpec").addEventListener('tap', function() {

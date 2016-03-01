@@ -9,9 +9,9 @@ initTapEvent();
 //设置所有事件
 function initTapEvent() {
 	
-	document.getElementById("ordercenter").addEventListener('tap', function() {
+	document.getElementById("orderList").addEventListener('tap', function() {
 		mui.openWindow({
-			id: 'ordercenter',
+			id: 'orderlist',
 			url: 'order/orderlist.html'
 		});
 	});
@@ -22,12 +22,12 @@ function initTapEvent() {
 			url: 'order/procart.html'
 		});
 	});
-//	document.getElementById("ordercenter").addEventListener('tap', function() {
-//		mui.openWindow({
-//			id: 'ordercenter',
-//			url: 'ordercenter.html'
-//		});
-//	});
+	document.getElementById("accountCenter").addEventListener('tap', function() {
+		mui.openWindow({
+			id: 'ordercenter',
+			url: 'order/ordercenter.html'
+		});
+	});
 }
 
 function initPullEvent() {
@@ -69,10 +69,13 @@ function initPullEvent() {
 				} 
 				pListPage++;
 				$("#productInfoHtmlTmp").html('');
-				$("#productInfoHtmlTmp").loadTemplate($("#lightProductTemplate"), json.result);
+				$("#productInfoHtmlTmp").loadTemplate($("#lightProductTemplate"), json.result.list);
 				$('#produectList').append($("#productInfoHtmlTmp").html()); 
+				$("#categoryUl").html('');
+				$("#categoryUl").loadTemplate($("#categoryLi"), json.result.categoryList);
+				
+				
 				var productimgs = document.querySelectorAll(".productimg");
-			 
 				for (var i = 0; i < productimgs.length; i++) { 
 					var pId = productimgs[i].getAttribute("value");
 					var jumpUrl = 'prodetail.html?pId=' + pId; 
