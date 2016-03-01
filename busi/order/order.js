@@ -123,7 +123,7 @@ function init() {
 
 function analyseTotal(){
 	var totalPrice = 0;
-	var orderPrices = document.querySelectorAll('.orderPrice');
+	var orderPrices = document.getElementById('orderDiv').querySelectorAll('.orderPrice');
 	for(var i=0; i<orderPrices.length; i++){
 		totalPrice = totalPrice +  parseFloat(orderPrices[i].innerHTML);
 	}
